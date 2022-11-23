@@ -2,7 +2,7 @@
   "name": "unplugin-strip-exports",
   "version": "0.0.0",
   "packageManager": "pnpm@7.16.1",
-  "description": "Markdoc plugin for  Vite and Webpack",
+  "description": "Remove specific named exports in your JavaScript code.",
   "publishConfig": {
     "access": "public"
   },
