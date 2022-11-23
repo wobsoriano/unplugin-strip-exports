@@ -14,7 +14,7 @@ export default defineConfig({
         if (filepath.includes('tsx'))
           return ['getServerSideProps']
       },
-      additionalTransformation(code) {
+      beforeOutput(code) {
         return code.replace('loader,', '').replace('action,', '')
       },
     }),
