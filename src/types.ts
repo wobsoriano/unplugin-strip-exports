@@ -5,10 +5,10 @@ type MatchFunction = (
   ssr?: boolean,
 ) => string[] | undefined | null | void
 
-type AdditionalTransformation = (code: string) => string
+type BeforeOuput = (code: string) => string
 
 export interface Options {
   match: MatchFunction
   babelTransformOptions?: TransformOptions
-  additionalTransformation?: AdditionalTransformation
+  beforeOutput?: BeforeOuput
 }
