@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "module": "ESNext",
+    "target": "es2017",
+    "module": "esnext",
+    "lib": ["esnext", "DOM"],
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true,
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "jsx": "react"
-  },
-  "exclude": ["dist", "*.d.ts"]
+    "strictNullChecks": true,
+    "resolveJsonModule": true
+  }
 }
