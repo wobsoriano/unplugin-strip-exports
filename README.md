@@ -69,26 +69,6 @@ module.exports = {
 <br></details>
 
 <details>
-<summary>Vue CLI</summary><br>
-
-```ts
-// vue.config.js
-module.exports = {
-  configureWebpack: {
-    plugins: [
-      require('unplugin-strip-exports/webpack')({
-        match() {
-          return ['getServerSideProps']
-        }
-      }),
-    ],
-  },
-}
-```
-
-<br></details>
-
-<details>
 <summary>esbuild</summary><br>
 
 ```ts
