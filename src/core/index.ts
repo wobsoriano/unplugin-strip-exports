@@ -1,15 +1,15 @@
 import { createUnplugin } from 'unplugin'
 import { transformSync } from '@babel/core'
-import type { TransformOptions } from 'vite'
+import type { TransformOptions } from '@babel/core'
 import type { Options } from '../types'
 import { babelTransformClientSidePages } from './transform'
 
 const JS_RE = /\.(js|jsx|ts|tsx|mjs|cjs|vue)$/
 
-export function removeExports(code: string, exportNames: string[], babelTransformOpts?: TransformOptions) {
+export function removeExports(code: string, exportNames: string[], babelTransformOptions?: TransformOptions) {
   const result = transformSync(code, {
     plugins: ['@babel/plugin-transform-typescript', babelTransformClientSidePages(exportNames)],
-    ...babelTransformOpts,
+    ...babelTransformOptions,
   })
 
   return result
@@ -23,7 +23,7 @@ export default createUnplugin<Options>(options => ({
     if (!namesToExclude || namesToExclude.length === 0)
       return null
 
-    const result = removeExports(code, namesToExclude)
+    const result = removeExports(code, namesToExclude, options.babelTransformOptions)
 
     if (result?.code) {
       return {

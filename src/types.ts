@@ -1,3 +1,5 @@
+import type { TransformOptions } from '@babel/core'
+
 type MatchFunction = (
   filepath: string,
   ssr?: boolean,
@@ -5,4 +7,5 @@ type MatchFunction = (
 
 export interface Options {
   match: MatchFunction
+  babelTransformOptions?: TransformOptions
 }
