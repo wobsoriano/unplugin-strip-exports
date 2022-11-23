@@ -1,14 +1,11 @@
 # unplugin-strip-exports
 
-[![Build Size](https://img.shields.io/bundlephobia/minzip/unplugin-strip-exports?label=bundle%20size&style=flat&colorA=000000&colorB=000000)](https://bundlephobia.com/result?p=unplugin-strip-exports)
-[![Version](https://img.shields.io/npm/v/unplugin-strip-exports?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/unplugin-strip-exports)
-
-[Markdoc](https://markdoc.io/) plugin for Vite/Webpack projects.
+Remove specific named exports in your JavaScript code. Like `getServerSideProps` and `getStaticProps` of Next.js.
 
 ## Install
 
 ```bash
-pnpm add unplugin-strip-exports
+pnpm add unplugin-strip-exports -D
 ```
 
 <details>
