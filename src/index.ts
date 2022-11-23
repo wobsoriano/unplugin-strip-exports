@@ -26,6 +26,13 @@ export default createUnplugin<Options>(options => ({
     const result = removeExports(code, namesToExclude, options.babelTransformOptions)
 
     if (result?.code) {
+      if (options.additionalTransformation) {
+        return {
+          code: options.additionalTransformation(result.code),
+          map: result.map,
+        }
+      }
+
       return {
         code: result.code,
         map: result.map,
