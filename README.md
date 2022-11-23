@@ -131,23 +131,26 @@ Now if you have a `index.tsx`:
 
 ```tsx
 import fs from 'fs'
+import { parseContent, sendMessage } from 'bar'
 
 export const getServerSideProps = () => {
   return {
-    content: fs.readFileSync('./foo.txt', 'utf-8'),
+    content: parseContent(fs.readFileSync('./foo.txt', 'utf-8')),
   }
 }
 
 export default ({ content }) => {
-  return <div>{content}</div>
+  return <button onClick={sendMessage}>{content}</button>
 }
 ```
 
 The output will be:
 
 ```tsx
+import { sendMessage } from 'bar'
+
 export default ({ content }) => {
-  return <div>{content}</div>
+  return <button onClick={sendMessage}>{content}</button>
 }
 ```
 
