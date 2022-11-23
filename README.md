@@ -162,7 +162,7 @@ export default defineConfig({
     StripExports({
       match(filepath, ssr) {
         // Ignore SSR build
-        if (!ssr)
+        if (ssr)
           return
 
         // Remove getServerSideProps in "pages" in browser build
