@@ -181,4 +181,3 @@ This plugin is a essentially a copy of [babelTransformClientSidePages()](https:/
 ## License
 
 MIT
-# unplugin-strip-exports
