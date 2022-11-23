@@ -8,7 +8,7 @@
 ## Install
 
 ```bash
-pnpm add @markdoc/markdoc unplugin-strip-exports
+pnpm add unplugin-strip-exports
 ```
 
 <details>
