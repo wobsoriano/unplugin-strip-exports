@@ -1,0 +1,108 @@
+{
+  "name": "unplugin-strip-exports",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.16.1",
+  "description": "Markdoc plugin for  Vite and Webpack",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vite",
+    "webpack",
+    "rollup",
+    "nuxt",
+    "esbuild",
+    "frontmatter",
+    "markdown",
+    "react",
+    "vue"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "require": "./dist/vite.cjs",
+      "import": "./dist/vite.mjs"
+    },
+    "./webpack": {
+      "types": "./dist/webpack.d.ts",
+      "require": "./dist/webpack.cjs",
+      "import": "./dist/webpack.mjs"
+    },
+    "./rollup": {
+      "types": "./dist/rollup.d.ts",
+      "require": "./dist/rollup.cjs",
+      "import": "./dist/rollup.mjs"
+    },
+    "./esbuild": {
+      "types": "./dist/esbuild.d.ts",
+      "require": "./dist/esbuild.cjs",
+      "import": "./dist/esbuild.mjs"
+    },
+    "./nuxt": {
+      "types": "./dist/nuxt.d.ts",
+      "require": "./dist/nuxt.cjs",
+      "import": "./dist/nuxt.mjs"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "require": "./dist/types.cjs",
+      "import": "./dist/types.mjs"
+    },
+    "./*": "./*"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch src",
+    "build:fix": "esno scripts/postbuild.ts",
+    "lint": "eslint .",
+    "play": "pnpm -C playground run dev",
+    "prepublishOnly": "pnpm run build",
+    "release": "bumpp && pnpm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@babel/core": "^7.20.2",
+    "unplugin": "^1.0.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.31.0",
+    "@babel/plugin-transform-typescript": "^7.20.2",
+    "@babel/types": "^7.20.2",
+    "@types/babel__core": "^7.1.19",
+    "bumpp": "^8.2.1",
+    "chalk": "^5.1.2",
+    "eslint": "^8.28.0",
+    "esno": "^0.16.3",
+    "fast-glob": "^3.2.12",
+    "rollup": "^3.4.0",
+    "tsup": "^6.5.0",
+    "typescript": "4.6.4",
+    "vite": "^3.2.4",
+    "vitest": "^0.25.2",
+    "webpack": "^5.75.0"
+  },
+  "eslintConfig": {
+    "extends": "@antfu"
+  }
+}
