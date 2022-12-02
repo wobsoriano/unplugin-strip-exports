@@ -18,8 +18,8 @@ export function removeExports(code: string, exportNames: string[], babelTransfor
 export default createUnplugin<Options>(options => ({
   name: 'unplugin-strip-exports',
   enforce: 'post',
-  transform(code: string, id: string, opts?: { ssr?: boolean }) {
-    const namesToExclude = JS_RE.test(id) && options.match(id, opts?.ssr)
+  async transform(code: string, id: string, opts?: { ssr?: boolean }) {
+    const namesToExclude = JS_RE.test(id) && await options.match(id, opts?.ssr)
     if (!namesToExclude || namesToExclude.length === 0)
       return null
 
