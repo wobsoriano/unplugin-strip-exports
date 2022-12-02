@@ -26,6 +26,7 @@ export default createUnplugin<Options>(options => ({
     const result = removeExports(code, namesToExclude, options.babelTransformOptions)
 
     if (result?.code) {
+      // `beforeOutput` is meant to be used with Vue.
       if (options.beforeOutput) {
         return {
           code: options.beforeOutput(result.code),
