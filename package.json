@@ -78,14 +78,14 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@babel/core": "^7.20.2",
+    "@babel/core": "^7.20.5",
     "unplugin": "^1.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.31.0",
     "@babel/plugin-transform-typescript": "^7.20.2",
     "@babel/types": "^7.20.2",
-    "@types/babel__core": "^7.1.19",
+    "@types/babel__core": "^7.1.20",
     "bumpp": "^8.2.1",
     "chalk": "^5.1.2",
     "eslint": "^8.28.0",
