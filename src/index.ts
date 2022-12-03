@@ -15,6 +15,12 @@ export function removeExports(code: string, exportNames: string[], babelTransfor
   return result
 }
 
+// For some reason, Vue SFCs have left over names
+// in the setup function returned object
+function removeLeftOverNames(namesToExclude: string[], code: string) {
+  return namesToExclude.reduce((result, word) => result.replace(`${word},`, ''), code)
+}
+
 export default createUnplugin<Options>(options => ({
   name: 'unplugin-strip-exports',
   enforce: 'post',
@@ -26,10 +32,9 @@ export default createUnplugin<Options>(options => ({
     const result = removeExports(code, namesToExclude, options.babelTransformOptions)
 
     if (result?.code) {
-      // `beforeOutput` is meant to be used with Vue.
-      if (options.beforeOutput) {
+      if (id.endsWith('.vue')) {
         return {
-          code: options.beforeOutput(result.code),
+          code: removeLeftOverNames(namesToExclude, result.code),
           map: result.map,
         }
       }
