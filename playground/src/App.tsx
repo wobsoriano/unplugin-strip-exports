@@ -9,7 +9,7 @@ export const getServerSideProps = () => {
 function App() {
   return (
     <div>
-      hello world { getServerSideProps().content }
+      hello world
     </div>
   )
 }
