@@ -134,6 +134,23 @@ export default defineConfig({
 })
 ```
 
+For Svelte, you can import the core `removeExports` function and use it with a custom Svelte [preprocessor](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/preprocessing.md):
+
+```js
+// svelte.config.js
+import { removeExports } from 'unplugin-strip-exports'
+
+const config = {
+  preprocess: [
+    {
+      script({ content }) {
+        return removeExports(content, ['getServerSideProps'])
+      }
+    }
+  ]
+}
+```
+
 ## Credits
 
 This plugin is a essentially a copy of [babelTransformClientSidePages()](https://github.com/rakkasjs/rakkasjs/blob/main/packages/rakkasjs/src/features/run-server-side/implementation/transform/transform-client-page.ts) util function of [Rakkas](https://github.com/rakkasjs/rakkasjs).
