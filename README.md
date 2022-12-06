@@ -87,6 +87,26 @@ build({
 
 <br></details>
 
+<details>
+<summary>SvelteKit</summary><br>
+
+```js
+// svelte.config.js
+import { removeExports } from 'unplugin-strip-exports'
+
+const config = {
+  preprocess: [
+    {
+      script({ content }) {
+        return removeExports(content, ['getServerSideProps'])
+      }
+    }
+  ]
+}
+```
+
+<br></details>
+
 Now if you have a `index.tsx`:
 
 ```tsx
@@ -132,23 +152,6 @@ export default defineConfig({
     }),
   ],
 })
-```
-
-For Svelte, you can import the core `removeExports` function and use it with a custom Svelte [preprocessor](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/preprocessing.md):
-
-```js
-// svelte.config.js
-import { removeExports } from 'unplugin-strip-exports'
-
-const config = {
-  preprocess: [
-    {
-      script({ content }) {
-        return removeExports(content, ['getServerSideProps'])
-      }
-    }
-  ]
-}
 ```
 
 ## Credits
