@@ -7,7 +7,7 @@ export default <Options>{
   clean: true,
   format: ['cjs', 'esm'],
   dts: true,
-  onSuccess: 'npm run build:fix',
+  // onSuccess: 'npm run build:fix',
   outExtension({ format }) {
     return {
       js: format === 'esm' ? '.mjs' : `.${format}`,
