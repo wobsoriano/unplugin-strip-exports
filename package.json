@@ -1,6 +1,6 @@
 {
   "name": "unplugin-strip-exports",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "packageManager": "pnpm@7.19.0",
   "description": "Remove specific named exports in your JavaScript code.",
   "publishConfig": {
