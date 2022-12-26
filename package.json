@@ -1,6 +1,5 @@
 {
   "name": "unplugin-strip-exports",
-  "type": "module",
   "version": "0.1.6",
   "packageManager": "pnpm@7.19.0",
   "description": "Remove specific named exports in your JavaScript code.",
@@ -22,38 +21,38 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
     },
     "./vite": {
       "types": "./dist/vite.d.ts",
-      "require": "./dist/vite.cjs",
-      "import": "./dist/vite.js"
+      "require": "./dist/vite.js",
+      "import": "./dist/vite.mjs"
     },
     "./webpack": {
       "types": "./dist/webpack.d.ts",
-      "require": "./dist/webpack.cjs",
-      "import": "./dist/webpack.js"
+      "require": "./dist/webpack.js",
+      "import": "./dist/webpack.mjs"
     },
     "./rollup": {
       "types": "./dist/rollup.d.ts",
-      "require": "./dist/rollup.cjs",
-      "import": "./dist/rollup.js"
+      "require": "./dist/rollup.js",
+      "import": "./dist/rollup.mjs"
     },
     "./esbuild": {
       "types": "./dist/esbuild.d.ts",
-      "require": "./dist/esbuild.cjs",
-      "import": "./dist/esbuild.js"
+      "require": "./dist/esbuild.js",
+      "import": "./dist/esbuild.mjs"
     },
     "./types": {
       "types": "./dist/types.d.ts",
-      "require": "./dist/types.cjs",
-      "import": "./dist/types.js"
+      "require": "./dist/types.js",
+      "import": "./dist/types.mjs"
     },
     "./*": "./*"
   },
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "typesVersions": {
     "*": {
@@ -67,7 +66,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && pnpm build:fix",
     "dev": "tsup --watch src",
     "build:fix": "esno scripts/postbuild.ts",
     "lint": "eslint .",
@@ -86,7 +85,6 @@
     "@babel/types": "^7.20.7",
     "@types/babel__core": "^7.1.20",
     "bumpp": "^8.2.1",
-    "chalk": "^5.2.0",
     "eslint": "^8.30.0",
     "esno": "^0.16.3",
     "fast-glob": "^3.2.12",

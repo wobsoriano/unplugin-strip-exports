@@ -4,8 +4,10 @@ export default <Options>{
   entryPoints: [
     'src/*.ts',
   ],
+  format: ['esm', 'cjs'],
+  target: 'node14',
   clean: true,
-  format: ['cjs', 'esm'],
   dts: true,
-  onSuccess: 'npm run build:fix',
+  splitting: true,
+  shims: true,
 }
