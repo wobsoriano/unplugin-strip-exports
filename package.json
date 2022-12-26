@@ -78,6 +78,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.20.7",
+    "@babel/plugin-transform-typescript": "^7.20.7",
     "unplugin": "^1.0.1"
   },
   "devDependencies": {

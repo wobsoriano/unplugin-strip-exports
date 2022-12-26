@@ -9,7 +9,7 @@ const JS_RE = /\.(js|jsx|ts|tsx|mjs|cjs|vue)$/
 export function removeExports(code: string, exportNames: string[], babelTransformOptions?: TransformOptions) {
   const result = transformSync(code, {
     ...babelTransformOptions,
-    plugins: [...babelTransformOptions?.plugins ?? [], babelTransformClientSidePages(exportNames)],
+    plugins: ['@babel/plugin-transform-typescript', ...babelTransformOptions?.plugins ?? [], babelTransformClientSidePages(exportNames)],
   })
 
   return result
