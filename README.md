@@ -156,7 +156,7 @@ export default defineConfig({
 
 ## Credits
 
-This plugin is a essentially a copy of [babelTransformClientSidePages()](https://github.com/rakkasjs/rakkasjs/blob/main/packages/rakkasjs/src/features/run-server-side/implementation/transform/transform-client-page.ts) util function of [Rakkas](https://github.com/rakkasjs/rakkasjs).
+This plugin is essentially a copy of [babelTransformClientSidePages()](https://github.com/rakkasjs/rakkasjs/blob/main/packages/rakkasjs/src/features/run-server-side/implementation/transform/transform-client-page.ts) util function of [Rakkas](https://github.com/rakkasjs/rakkasjs).
 
 ## License
 
