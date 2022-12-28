@@ -45,4 +45,7 @@ export default createUnplugin<Options>(options => ({
       }
     }
   },
+  transformInclude(id) {
+    return JS_RE.test(id)
+  },
 }))
